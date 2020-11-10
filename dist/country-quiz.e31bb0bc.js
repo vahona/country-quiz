@@ -33863,15 +33863,15 @@ exports.default = void 0;
 
 var _react = require("react");
 
+const COUNTRY_URL = "https://restcountries.eu/rest/v2/all";
+
 function useFeatch() {
   const [country, setCountry] = (0, _react.useState)([]);
-  const COUNTRY_URL = "https://restcountries.eu/rest/v2/all";
 
   const countries = async () => {
     try {
       const res = await fetch(COUNTRY_URL);
       const country = await res.json();
-      console.log(country);
       setCountry(country);
     } catch (e) {
       console.log(e);
@@ -33939,43 +33939,85 @@ var _react = _interopRequireDefault(require("react"));
 
 var _reactRouterDom = require("react-router-dom");
 
-var _FeactFullCountries = _interopRequireDefault(require("./Components/FeactFullCountries"));
+var _useFeatch = _interopRequireDefault(require("./useFeatch"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import FeatchFullInformation from './Components/FeactFullCountries'
 function FirstRuning() {
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h5", null, "??? is the capital of"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
-    className: "button_choice"
-  }, "A ????")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
-    className: "button_choice"
-  }, "B ????")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
-    className: "button_choice"
-  }, "C ???")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
-    className: "button_choice"
-  }, "D ???")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  const [country, setCountry] = (0, _useFeatch.default)([]);
+  console.log(country.capital);
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h5", null, setCountry.capital, " is the capital of"), country.map(capitals => {
+    country.length = 4;
+    return /*#__PURE__*/_react.default.createElement("div", {
+      key: country._id
+    }, /*#__PURE__*/_react.default.createElement("button", {
+      className: "button_choice"
+    }, " ", capitals.capital));
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "./SecondRuning"
   }, " ", /*#__PURE__*/_react.default.createElement("button", {
     className: "next"
   }, "Next"))));
 }
 
-var _default = FirstRuning;
+var _default = FirstRuning; //    </div >
+//                         <div>
+//                 <button className="button_choice">B{capitals.capital}</button>
+//                         </div>
+//                         <div>
+//                             <button className="button_choice">C {capitals.capital}</button>
+//                         </div>
+//                         <div>
+//                             <button className="button_choice">D {capitals.capital}</button>
+//                         </div>
+//                     </div >
+
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./Components/FeactFullCountries":"Components/FeactFullCountries.js"}],"Components/FeacthingCapital.js":[function(require,module,exports) {
-// https://restcountries.eu/rest/v2/capital/{capital}
-// import React, { useEffect, useState } from 'react'
-// import { useParams } from 'react-router-dom';
-// import FeatchFullInformation from './FeactFullCountries'
-// function FeacthingCapital({country, setCountry}) {
-//     const { capitalName } = useParams()
-//     const BASE_URL = " https://restcountries.eu/rest/v2/capital/{capitalName}";
-//    const [capital, setCapital] = useState([])
-//    const capitalsCountry = async () => {
-//        const response = await fetch(BASE_URL + capitalName )
-//    }
-// }
-// export default FeacthingCapital
-},{}],"SecondRuning.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./useFeatch":"useFeatch.js"}],"Components/FeacthingCapital.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _reactRouterDom = require("react-router-dom");
+
+var _useFeatch = _interopRequireDefault(require("../useFeatch"));
+
+var _FeactFullCountries = _interopRequireDefault(require("./FeactFullCountries"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+const BASE_URL = `https://restcountries.eu/rest/v2/capital/`;
+
+function FeacthingCapital() {
+  const [country, setCountry, useEffect] = (0, _useFeatch.default)({});
+  const {
+    capitalName
+  } = (0, _reactRouterDom.useParams)();
+  console.log("KKK", capitalName);
+
+  const capitalsCountry = async () => {
+    const response = await fetch(BASE_URL + capitalName);
+    const capit = await response.json();
+    console.log("kkkkk", capit);
+    setCountry(capit);
+  };
+
+  return /*#__PURE__*/_react.default.createElement("div", null, "Me");
+}
+
+var _default = FeacthingCapital;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../useFeatch":"useFeatch.js","./FeactFullCountries":"Components/FeactFullCountries.js"}],"SecondRuning.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33987,21 +34029,22 @@ var _react = _interopRequireDefault(require("react"));
 
 var _reactRouterDom = require("react-router-dom");
 
+var _useFeatch = _interopRequireDefault(require("./useFeatch"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function SecondRuning() {
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("img", {
-    src: "",
-    alt: "flag"
-  }), /*#__PURE__*/_react.default.createElement("h5", null, "Which country does this flag belong to?"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
-    className: "button_choice"
-  }, "A ????")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
-    className: "button_choice"
-  }, "B ????")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
-    className: "button_choice"
-  }, "C ???")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
-    className: "button_choice"
-  }, "D ???")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  const [country, setCountry] = (0, _useFeatch.default)([]);
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, country.map(countri => {
+    country.length = 1;
+    return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("img", {
+      className: "flags",
+      src: countri.flag,
+      alt: "flag"
+    }), /*#__PURE__*/_react.default.createElement("h5", null, "Which country does this flag belong to?"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
+      className: "button_choice"
+    }, countri.name)));
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "./Score"
   }, " ", /*#__PURE__*/_react.default.createElement("button", {
     className: "next"
@@ -34010,7 +34053,7 @@ function SecondRuning() {
 
 var _default = SecondRuning;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"Score.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./useFeatch":"useFeatch.js"}],"Score.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34064,7 +34107,7 @@ var _SecondRuning = _interopRequireDefault(require("./SecondRuning"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "Country quiz"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "Country quiz"), /*#__PURE__*/_react.default.createElement(_FeacthingCapital.default, null), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     exact: true,
     path: "/"
   }, /*#__PURE__*/_react.default.createElement(_FirstRuning.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {

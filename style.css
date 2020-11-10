@@ -20,3 +20,8 @@
     background-color: transparent;
     border-radius: 10px;
 }
+
+.flags {
+    width: 10%;
+    height: 10%;
+}
