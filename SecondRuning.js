@@ -4,25 +4,29 @@ import useFeatch from './useFeatch'
 
 function SecondRuning() {
 
-    const [country, setCountry] = useFeatch([])
-    return (
-        <>
-        { country.map((countri) => {
-            country.length = 1 
-            return (
-                <>
-            <img className="flags" src={countri.flag} alt="flag" />
-            <h5>Which country does this flag belong to?</h5>
-            <div>
-                <button className="button_choice">{countri.name}</button>
-            </div>
-            </>
-            )
-        })
+  const [country, setCountry] = useFeatch([])
+  return (
+    <>
+      <h5>Which country does this flag belong to?</h5>
+      { country.map((countri, i) => {
+        country.length = (Math.floor(Math.random() * country.length))
+        { country.map((flags) => { < img key={countri.id} className="flags" src={flags.flag} alt="flag" />}) } 
+        return (
+          <>
+                <div key={countri.id}>
+                  <button className="button_choice">{countri.name}</button>
+                </div>
+          </>
+        )
+         
+          
+      })
     }
-            <Link to='./Score'> <button className="next">Next</button></Link>
-        </>
-    )
+    
+
+      <Link to='./Score'> <button className="next">Next</button></Link>
+    </>
+  )
 }
 
 export default SecondRuning

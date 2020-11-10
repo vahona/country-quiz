@@ -33853,7 +33853,9 @@ if ("development" !== "production") {
     style: _propTypes.default.object
   });
 }
-},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"useFeatch.js":[function(require,module,exports) {
+},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"Components/FeactFullCountries.js":[function(require,module,exports) {
+
+},{}],"useFeatch.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33876,17 +33878,22 @@ function useFeatch() {
     } catch (e) {
       console.log(e);
     }
-  };
+  }; // function RandomCOuntry(e) {
+  //     const city = country.length;
+  //     setCountry(Math.floor(Math.random() * city))
+  //     return city
+  // }
+
 
   (0, _react.useEffect)(() => {
-    countries();
+    countries(); // RandomCOuntry()
   }, []);
   return [country, setCountry, COUNTRY_URL, countries, _react.useEffect];
 }
 
 var _default = useFeatch;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"Components/FeactFullCountries.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js"}],"FirstRuning.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33895,47 +33902,6 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
-
-var _useFeatch = _interopRequireDefault(require("../useFeatch"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-function FeatchFullInformation(props) {
-  const [country, setCountry] = (0, _useFeatch.default)([]);
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", null, country.map(flags => {
-    console.log(flags);
-
-    /*#__PURE__*/
-    _react.default.createElement("img", {
-      src: flags.flag,
-      alt: "flag"
-    });
-  }), /*#__PURE__*/_react.default.createElement("h5", null, "Which country does this flag belong to?"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
-    className: "button_choice"
-  }, "A ????")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
-    className: "button_choice"
-  }, "B ????")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
-    className: "button_choice"
-  }, "C ???")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
-    className: "button_choice"
-  }, "D ???"))));
-}
-
-var _default = FeatchFullInformation;
-exports.default = _default;
-},{"react":"node_modules/react/index.js","../useFeatch":"useFeatch.js"}],"FirstRuning.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
 
 var _reactRouterDom = require("react-router-dom");
 
@@ -33943,17 +33909,23 @@ var _useFeatch = _interopRequireDefault(require("./useFeatch"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
 // import FeatchFullInformation from './Components/FeactFullCountries'
 function FirstRuning() {
   const [country, setCountry] = (0, _useFeatch.default)([]);
   console.log(country.capital);
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h5", null, setCountry.capital, " is the capital of"), country.map(capitals => {
-    country.length = 4;
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h5", null, " ", country.capitals, " is the capital of"), /*#__PURE__*/_react.default.createElement("div", null, country.map(capitals => {
+    country.length = Math.floor(Math.random() * country.length);
     return /*#__PURE__*/_react.default.createElement("div", {
-      key: country._id
+      key: country.id
+    }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+      to: "./FirstRuning"
     }, /*#__PURE__*/_react.default.createElement("button", {
       className: "button_choice"
-    }, " ", capitals.capital));
+    }, " ", capitals.capital)));
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "./SecondRuning"
   }, " ", /*#__PURE__*/_react.default.createElement("button", {
@@ -33961,63 +33933,30 @@ function FirstRuning() {
   }, "Next"))));
 }
 
-var _default = FirstRuning; //    </div >
-//                         <div>
-//                 <button className="button_choice">B{capitals.capital}</button>
-//                         </div>
-//                         <div>
-//                             <button className="button_choice">C {capitals.capital}</button>
-//                         </div>
-//                         <div>
-//                             <button className="button_choice">D {capitals.capital}</button>
-//                         </div>
-//                     </div >
-
+var _default = FirstRuning;
 exports.default = _default;
 },{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./useFeatch":"useFeatch.js"}],"Components/FeacthingCapital.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireWildcard(require("react"));
-
-var _reactRouterDom = require("react-router-dom");
-
-var _useFeatch = _interopRequireDefault(require("../useFeatch"));
-
-var _FeactFullCountries = _interopRequireDefault(require("./FeactFullCountries"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-const BASE_URL = `https://restcountries.eu/rest/v2/capital/`;
-
-function FeacthingCapital() {
-  const [country, setCountry, useEffect] = (0, _useFeatch.default)({});
-  const {
-    capitalName
-  } = (0, _reactRouterDom.useParams)();
-  console.log("KKK", capitalName);
-
-  const capitalsCountry = async () => {
-    const response = await fetch(BASE_URL + capitalName);
-    const capit = await response.json();
-    console.log("kkkkk", capit);
-    setCountry(capit);
-  };
-
-  return /*#__PURE__*/_react.default.createElement("div", null, "Me");
-}
-
-var _default = FeacthingCapital;
-exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../useFeatch":"useFeatch.js","./FeactFullCountries":"Components/FeactFullCountries.js"}],"SecondRuning.js":[function(require,module,exports) {
+// import React, { useEffect, useState } from 'react'
+// import { useParams } from 'react-router-dom';
+// import useFeatch from '../useFeatch';
+// import FeatchFullInformation from './FeactFullCountries'
+// const BASE_URL = `https://restcountries.eu/rest/v2/capital/`;
+// function FeacthingCapital() {
+//     const [country, setCountry, useEffect] = useFeatch({})
+//     const {capitalName} = useParams()
+//     console.log("KKK", capitalName);
+//    const capitalsCountry = async () => {
+//        const response = await fetch(BASE_URL + capitalName )
+//        const capit = await response.json()
+//        console.log("kkkkk",capit);
+//        setCountry(capit)
+//    }
+//    return (
+//        <div>Me</div>
+//    )
+// }
+// export default FeacthingCapital
+},{}],"SecondRuning.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34035,13 +33974,22 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function SecondRuning() {
   const [country, setCountry] = (0, _useFeatch.default)([]);
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, country.map(countri => {
-    country.length = 1;
-    return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("img", {
-      className: "flags",
-      src: countri.flag,
-      alt: "flag"
-    }), /*#__PURE__*/_react.default.createElement("h5", null, "Which country does this flag belong to?"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h5", null, "Which country does this flag belong to?"), country.map((countri, i) => {
+    country.length = Math.floor(Math.random() * country.length);
+    {
+      country.map(flags => {
+        /*#__PURE__*/
+        _react.default.createElement("img", {
+          key: countri.id,
+          className: "flags",
+          src: flags.flag,
+          alt: "flag"
+        });
+      });
+    }
+    return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
+      key: countri.id
+    }, /*#__PURE__*/_react.default.createElement("button", {
       className: "button_choice"
     }, countri.name)));
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
@@ -34107,9 +34055,12 @@ var _SecondRuning = _interopRequireDefault(require("./SecondRuning"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "Country quiz"), /*#__PURE__*/_react.default.createElement(_FeacthingCapital.default, null), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "Country quiz"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     exact: true,
     path: "/"
+  }, /*#__PURE__*/_react.default.createElement(_FirstRuning.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    exact: true,
+    path: "/FirstRuning"
   }, /*#__PURE__*/_react.default.createElement(_FirstRuning.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/SecondRuning"
   }, /*#__PURE__*/_react.default.createElement(_SecondRuning.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
@@ -34161,7 +34112,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65357" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62101" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

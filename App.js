@@ -7,23 +7,25 @@ import Score from './Score'
 import SecondRuning from './SecondRuning'
 
 function App() {
-    return(
-        <>
-        <h1>Country quiz</h1>
-        <FeacthingCapital/>
-        <Switch>
-            <Route exact path="/">
-                <FirstRuning />
-            </Route>
-            <Route path="/SecondRuning">
-                    <SecondRuning/>
-            </Route>
-            <Route path="/Score">
-                <Score/>
-            </Route>
-            </Switch>
-        </>
-    )
+  return (
+    <>
+      <h1>Country quiz</h1>
+      <Switch>
+        <Route exact path="/">
+          <FirstRuning />
+        </Route>
+        <Route exact path="/FirstRuning">
+          <FirstRuning />
+        </Route>
+        <Route path="/SecondRuning">
+          <SecondRuning />
+        </Route>
+        <Route path="/Score">
+          <Score />
+        </Route>
+      </Switch>
+    </>
+  )
 }
 
 export default App

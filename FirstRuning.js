@@ -1,42 +1,32 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import useFeatch from './useFeatch'
 // import FeatchFullInformation from './Components/FeactFullCountries'
 
 
 function FirstRuning() {
-    const [country, setCountry] = useFeatch([])
-    console.log(country.capital);
-    return(
-        <>
-            <div>
-                <h5>{setCountry.capital} is the capital of</h5>
-                {country.map((capitals) => {
-                    country.length = 4;
-                     return (
-                        <div key={country._id}>
-                    <button className="button_choice"> {capitals.capital}</button>
-                   </div>
+  const [country, setCountry] = useFeatch([])
 
-                     )
-                }  )}
-                <Link to='./SecondRuning'> <button className="next">Next</button></Link>
+
+  console.log(country.capital);
+  return (
+    <>
+      <h5> {country.capitals} is the capital of</h5>
+      <div>
+        {country.map((capitals) => {
+          country.length = (Math.floor(Math.random() * country.length))
+          return (
+            <div key={country.id}>
+              <Link to="./FirstRuning"><button className="button_choice"> {capitals.capital}</button></Link>
             </div>
-        </>
-    )
+          )
+        })}
+        <Link to='./SecondRuning'> <button className="next">Next</button></Link>
+      </div>
+    </>
+  )
 }
 
 export default FirstRuning
 
 
-    //    </div >
-    //                         <div>
-    //                 <button className="button_choice">B{capitals.capital}</button>
-    //                         </div>
-    //                         <div>
-    //                             <button className="button_choice">C {capitals.capital}</button>
-    //                         </div>
-    //                         <div>
-    //                             <button className="button_choice">D {capitals.capital}</button>
-    //                         </div>
-    //                     </div >
