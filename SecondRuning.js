@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function SecondRuning() {
     return (
@@ -17,6 +18,7 @@ function SecondRuning() {
             <div>
                 <button className="button_choice">D ???</button>
             </div>
+            <Link to='./Score'> <button className="next">Next</button></Link>
         </>
     )
 }

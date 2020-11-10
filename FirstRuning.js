@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import FeatchFullInformation from './Components/FeactFullCountries'
 
 function FirstRuning() {
@@ -18,6 +19,7 @@ function FirstRuning() {
                 <div>
                     <button className="button_choice">D ???</button>
                 </div>
+                <Link to='./SecondRuning'> <button className="next">Next</button></Link>
             </div>
         </>
     )
