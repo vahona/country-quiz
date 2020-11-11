@@ -3,30 +3,33 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import useFeatch from '../useFeatch';
-import FeatchFullInformation from './FeactFullCountries'
+// import FeatchFullInformation from './FeactFullCountries'
 
-const BASE_URL = "https://restcountries.eu/rest/v2/capital/";
+
+
+
 
 function FeacthingCapital() {
-    const [country, setCountry] = useFeatch({})
-    const {capitalName} = useParams()
-    console.log("KKK", capitalName);
+	const [country, setCountry] = useFeatch({})
+	const { capitalName } = useParams()
+	const BASE_URL = `https://restcountries.eu/rest/v2/capital/${capitalName}`;
 
-   const capitalsCountry = async () => {
-       const response = await fetch(BASE_URL + capitalName )
-       const capit = await response.json()
-    //    console.log("kkkkk",capit);
-       setCountry(capit)
-   }
+	const capitalsCountry = async () => {
+		const response = await fetch(BASE_URL + capitalName)
+		console.log("pppp", country)
+		const capit = await response.json()
+		setCountry(capit)
 
-    useEffect(() => {
-        capitalsCountry();
+	}
 
-    }, [])
+	useEffect(() => {
+		capitalsCountry();
 
-   return (
-       <div>Me</div>
-   )
+  }, [])
+
+  return (
+    <div></div>
+	)
 
 }
 

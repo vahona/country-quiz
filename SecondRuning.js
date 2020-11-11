@@ -8,21 +8,18 @@ function SecondRuning() {
   return (
     <>
       <h5>Which country does this flag belong to?</h5>
-      { country.map((countri, i) => {
-        country.length = (Math.floor(Math.random() * country.length))
-        { country.map((flags) => { < img key={countri.id} className="flags" src={flags.flag} alt="flag" />}) } 
+      {country.map((countri) => {
+        country.length = (Math.floor(Math.random() * country.length)) 
         return (
+          <img key={countri.id} className="flags" src={countri.flag} alt="flag" /> &&
           <>
-                <div key={countri.id}>
-                  <button className="button_choice">{countri.name}</button>
+            <div >
+              <button className="button_choice" key={countri.id}>{countri.name}</button>
                 </div>
           </>
         )
-         
-          
       })
     }
-    
 
       <Link to='./Score'> <button className="next">Next</button></Link>
     </>

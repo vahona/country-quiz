@@ -6,6 +6,9 @@
     padding-bottom: 0.5rem;
     border-radius: 10px;
     margin: 1rem;
+    width: 70%;
+    border: rgb(29, 116, 192) 2px solid;
+    color: rgb(29, 116, 192) ;
 }
 
 .button_choice:hover {
@@ -31,21 +34,41 @@ html {
     background-size: 100%;
     margin-inline-start: auto;
     margin-inline-end: auto;
+    
 
 }
 
 body {
-
-    width:400px ;
-    height: 1000px;
+    
+    /* width: 50% ; */
+    height: 600px;
+    background-image: url('/adventure.7d6e9b33.svg');
+    background-repeat: no-repeat;
+    background-position: 65% 15%;
+    z-index: 2;
+    top: 3rem;
+    font-family: roboto;
+    
+   
 
 }
 
+h1 {
+  color: aliceblue;
+  
+}
+
+
+.score_container {
+    margin-top: 2rem;
+}
+
 main {
+    background-color: white;
     margin-inline-start: 1rem;
     margin-inline-end: 1rem;
     margin-block-start: 5%;
-    color: white;
+    color: gray;
     text-align: center;
     align-items: center;
     border: white 3px solid ;
@@ -55,7 +78,8 @@ main {
     right: 0;
     left: 20%;
     position: absolute;
-    top: 0;
+    top: 10rem;
+    z-index: 1;
 
 }
 
@@ -65,6 +89,21 @@ main {
     text-transform: uppercase;
     padding: 1.5rem;
     border-radius: 10px;
+}
+
+@media (min-width: 1000px) {
+     .button_choice {
+    background-color: white;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 10px;
+    margin: 1rem;
+    width: 40%;
+    border: rgb(29, 116, 192) 2px solid;
+    color: rgb(29, 116, 192) ;
+}
 }
 
 /*# sourceMappingURL=/style.e308ff8e.css.map */

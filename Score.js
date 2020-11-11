@@ -1,15 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import SecondRuning from './SecondRuning'
+import Background from './images/winner.svg'
+import useFeatch from './useFeatch'
+
+
 
 function Score() {
+  const [country, setCountry] = useFeatch([{}])
   return (
-    <>
-      <img src="" alt="quize" />
+    <div className="score">
+      <img src={Background} alt="quize" />
       <h4>Result</h4>
       <p>you got ???? correct answer</p>
-      <Link to="/FirstRuning"><button className="try_again">Try again</button></Link>
-    </>
+      <Link to="/FirstRuning"><button className="try_again" key={country.id}>Try again</button></Link>
+    </div>
   )
 }
 

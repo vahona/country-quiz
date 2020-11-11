@@ -12,6 +12,8 @@ function useFeatch() {
       const country = await res.json()
       setCountry(country)
     }
+
+
     catch (e) {
       console.log(e);
     }

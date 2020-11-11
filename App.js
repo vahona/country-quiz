@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      <h1>Country quiz</h1>
+      
       <FeacthingCapital/>
       <Switch>
         <Route exact path="/">
