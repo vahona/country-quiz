@@ -1,5 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-function QuestionAnswer() {
-    
+function QuestionAnswer({question, options, selecdet}) {
+    const [answer, setAnswer] = useState(options)
+
+
 }
+
+
+
+export default QuestionAnswer

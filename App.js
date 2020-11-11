@@ -7,9 +7,12 @@ import Score from './Score'
 import SecondRuning from './SecondRuning'
 
 function App() {
+
+
   return (
     <>
       <h1>Country quiz</h1>
+      <FeacthingCapital/>
       <Switch>
         <Route exact path="/">
           <FirstRuning />

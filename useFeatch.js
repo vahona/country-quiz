@@ -17,15 +17,10 @@ function useFeatch() {
     }
   }
 
-  // function RandomCOuntry(e) {
-  //     const city = country.length;
-  //     setCountry(Math.floor(Math.random() * city))
-  //     return city
-  // }
-
   useEffect(() => {
     countries();
-    // RandomCOuntry()
+    
+
   }, [])
 
   return [country, setCountry, COUNTRY_URL, countries, useEffect]

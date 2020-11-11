@@ -5,15 +5,14 @@ import useFeatch from './useFeatch'
 
 
 function FirstRuning() {
-  const [country, setCountry] = useFeatch([])
-
-
-  console.log(country.capital);
+  const [country, setCountry] = useFeatch([{}])
+  console.log('kjsdk', country);
   return (
     <>
       <h5> {country.capitals} is the capital of</h5>
       <div>
-        {country.map((capitals) => {
+        {
+        country.map((capitals) => {
           country.length = (Math.floor(Math.random() * country.length))
           return (
             <div key={country.id}>

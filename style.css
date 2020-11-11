@@ -1,5 +1,5 @@
 .button_choice {
-    background-color: transparent;
+    background-color: white;
     padding-left: 4rem;
     padding-right: 4rem;
     padding-top: 0.5rem;
@@ -17,11 +17,52 @@
     padding-right: 3rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color: transparent;
+    background-color: white;
     border-radius: 10px;
 }
 
 .flags {
     width: 10%;
     height: 10%;
+}
+
+html {
+    background-image: url('./background.png');
+    background-size: 100%;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+
+}
+
+body {
+
+    width:400px ;
+    height: 1000px;
+
+}
+
+main {
+    margin-inline-start: 1rem;
+    margin-inline-end: 1rem;
+    margin-block-start: 5%;
+    color: white;
+    text-align: center;
+    align-items: center;
+    border: white 3px solid ;
+    border-radius: 5px;
+    max-width: 50%;
+    max-height: 100%;
+    right: 0;
+    left: 20%;
+    position: absolute;
+    top: 0;
+
+}
+
+.next {
+    background-color: rgb(255, 123, 0);
+    color: white;
+    text-transform: uppercase;
+    padding: 1.5rem;
+    border-radius: 10px;
 }

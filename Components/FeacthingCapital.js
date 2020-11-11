@@ -1,30 +1,33 @@
 
 
-// import React, { useEffect, useState } from 'react'
-// import { useParams } from 'react-router-dom';
-// import useFeatch from '../useFeatch';
-// import FeatchFullInformation from './FeactFullCountries'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
+import useFeatch from '../useFeatch';
+import FeatchFullInformation from './FeactFullCountries'
 
+const BASE_URL = "https://restcountries.eu/rest/v2/capital/";
 
-// const BASE_URL = `https://restcountries.eu/rest/v2/capital/`;
+function FeacthingCapital() {
+    const [country, setCountry] = useFeatch({})
+    const {capitalName} = useParams()
+    console.log("KKK", capitalName);
 
-// function FeacthingCapital() {
-//     const [country, setCountry, useEffect] = useFeatch({})
-//     const {capitalName} = useParams()
-//     console.log("KKK", capitalName);
+   const capitalsCountry = async () => {
+       const response = await fetch(BASE_URL + capitalName )
+       const capit = await response.json()
+    //    console.log("kkkkk",capit);
+       setCountry(capit)
+   }
 
-//    const capitalsCountry = async () => {
-//        const response = await fetch(BASE_URL + capitalName )
-//        const capit = await response.json()
-//        console.log("kkkkk",capit);
-//        setCountry(capit)
-//    }
-   
+    useEffect(() => {
+        capitalsCountry();
 
-//    return (
-//        <div>Me</div>
-//    )
+    }, [])
 
-// }
+   return (
+       <div>Me</div>
+   )
 
-// export default FeacthingCapital
+}
+
+export default FeacthingCapital
