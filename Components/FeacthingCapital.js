@@ -33,7 +33,6 @@ function FeacthingCapital() {
     <div></div>
 )
 
-
 }
 
 export default FeacthingCapital
