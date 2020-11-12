@@ -1,38 +1,37 @@
 
-
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import useFeatch from '../useFeatch';
 
 
+function FeacthingCapital({ capitalName }) {
+  const [country, setCountry] = useFeatch({})
+  const [capital, setCapital] = useState([])
 
+  // const { capitalName } = useParams()
+  const BASE_URL = `https://restcountries.eu/rest/v2/capital/${capitalName}`;
 
+  // https://restcountries.eu/rest/v2/capital/tallinn
 
+  const capitalsCountry = async () => {
+    const response = await fetch(BASE_URL)
+    console.log(response);
+    const capit = await response.json()
+    setCapital(capit)
+    console.log("j", capit);
 
-function FeacthingCapital() {
-	const [country, setCountry] = useFeatch({})
-	const [capital, setCapital] = useState('')
+  }
 
-	// const { capitalName } = useParams()
-	const BASE_URL = `https://restcountries.eu/rest/v2/capital/${capital}`;
+  useEffect(() => {
+    capitalsCountry();
 
-	const capitalsCountry = async () => {
-		const response = await fetch(BASE_URL)
-		const capit = await response.json()
-		setCapital(capit.capital)
-		console.log("j",capit.capital);
-
-   }
-
-	useEffect(() => {
-		capitalsCountry();
-
-  }, [capital])
+  }, [capitalName])
 
   return (
-    <div></div>
-)
+    <div>
 
+    </div>
+  )
 }
 
 export default FeacthingCapital

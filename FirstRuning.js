@@ -1,3 +1,5 @@
+
+
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import useFeatch from './useFeatch'
@@ -5,7 +7,7 @@ import useFeatch from './useFeatch'
 
 
 function FirstRuning() {
-  const [country, setCountry] = useFeatch([{}])
+  const [country, setCountry] = useFeatch([])
   const [isnext, setIsnext] = useState(false)
 
   const handleClick = (e) => {
@@ -14,8 +16,8 @@ function FirstRuning() {
   } 
 
   return (
-    <div >
-      <h5> {country.capitals} is the capital of</h5>
+    <div>
+      <h5> {country.capital} is the capital of</h5>
       <div>
         {
         country.map((capitals) => {
@@ -38,7 +40,8 @@ function FirstRuning() {
                   <Link to="./FirstRuning">
                     <button className="button_choice" onClick={handleClick} key={country.id}>
                      {capita.capital}
-                    </button></Link>
+                    </button>
+                    </Link>
                 </div>
               )
             })}

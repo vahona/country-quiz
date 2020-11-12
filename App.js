@@ -11,7 +11,6 @@ function App() {
 
   return (
     <>
-      
       <FeacthingCapital/>
       <Switch>
         <Route exact path="/">
