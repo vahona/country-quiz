@@ -33918,7 +33918,6 @@ function FirstRuning() {
     setIsnext(!isnext);
   };
 
-  console.log('kjsdk', country);
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h5", null, " ", country.capitals, " is the capital of"), /*#__PURE__*/_react.default.createElement("div", null, country.map(capitals => {
     country.length = Math.floor(Math.random() * country.length);
     return /*#__PURE__*/_react.default.createElement("div", {
@@ -33970,24 +33969,22 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-// import FeatchFullInformation from './FeactFullCountries'
 function FeacthingCapital() {
   const [country, setCountry] = (0, _useFeatch.default)({});
-  const {
-    capitalName
-  } = (0, _reactRouterDom.useParams)();
-  const BASE_URL = `https://restcountries.eu/rest/v2/capital/${capitalName}`;
+  const [capital, setCapital] = (0, _react.useState)(''); // const { capitalName } = useParams()
+
+  const BASE_URL = `https://restcountries.eu/rest/v2/capital/${capital}`;
 
   const capitalsCountry = async () => {
-    const response = await fetch(BASE_URL + capitalName);
-    console.log("pppp", country);
+    const response = await fetch(BASE_URL);
     const capit = await response.json();
-    setCountry(capit);
+    setCapital(capit.capital);
+    console.log("j", capit.capital);
   };
 
   (0, _react.useEffect)(() => {
     capitalsCountry();
-  }, []);
+  }, [capital]);
   return /*#__PURE__*/_react.default.createElement("div", null);
 }
 
@@ -34152,7 +34149,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50302" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52726" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

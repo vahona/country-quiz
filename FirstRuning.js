@@ -13,7 +13,6 @@ function FirstRuning() {
       setIsnext(!isnext)
   } 
 
-  console.log('kjsdk', country);
   return (
     <div >
       <h5> {country.capitals} is the capital of</h5>
@@ -38,7 +37,7 @@ function FirstRuning() {
                 <div key={country.id}>
                   <Link to="./FirstRuning">
                     <button className="button_choice" onClick={handleClick} key={country.id}>
-                      {capita.capital}
+                     {capita.capital}
                     </button></Link>
                 </div>
               )
@@ -51,5 +50,4 @@ function FirstRuning() {
 }
 
 export default FirstRuning
-
 

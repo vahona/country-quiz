@@ -13,7 +13,6 @@ function useFeatch() {
       setCountry(country)
     }
 
-
     catch (e) {
       console.log(e);
     }
@@ -21,7 +20,6 @@ function useFeatch() {
 
   useEffect(() => {
     countries();
-    
 
   }, [])
 
