@@ -12,7 +12,7 @@ function Score() {
     <div className="score">
       <img src={Background} alt="quize" />
       <h4>Result</h4>
-      <p>you got ???? correct answer</p>
+      <p>you got <span> 0 </span> correct answer</p>
       <Link to="/FirstRuning"><button className="try_again" key={country.id}>Try again</button></Link>
     </div>
   )

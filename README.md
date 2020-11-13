@@ -1,11 +1,11 @@
 
 <!-- Please update value in the {}  -->
 
-<h1 align="center">{Your project name}</h1>
+<h1 align="center">Country quiz</h1>
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://country-quiz-sugi.netlify.app">
       Demo
     </a>
     <span> | </span>
@@ -35,9 +35,18 @@
 Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
 
 -   Where can I see your demo?
--   What was your experience?
--   What have you learned/improved?
--   Your wisdom? :)
+  ## My experience 
+
+    -    
+
+  ## What have you learned/improved?
+
+
+  ## Your wisdom? :)
+
+  -    This is most difficult project a hve ever done so that I didn,t eve know how to start. I didn't even know how to start. I tried to think of what I really don't understand but I don't know till the time I'm writting this note. 
+
+  -    I'm really sorry for achieving nothing in my project, it does not mean that I don't care but I really don't anything. 
 
 ### Built With
 
@@ -74,4 +83,4 @@ $ npm start
 
 -   Website [your-website.com](https://country-quiz-sugi.netlify.app)
 -   GitHub [@your-username](https://github.com/vahona/country-quiz)
--   Twitter [@your-twitter](https://{twitter.com/your-username})
+

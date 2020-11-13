@@ -83,6 +83,13 @@ main {
 
 }
 
+span {
+    color: red;
+    font-weight: 1000;
+    width: 24px;
+    height: 24px;
+}
+
 .next {
     background-color: rgb(255, 123, 0);
     color: white;

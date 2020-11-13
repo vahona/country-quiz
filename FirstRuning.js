@@ -5,14 +5,17 @@ import useFeatch from './useFeatch'
 
 
 
-function FirstRuning() {
-  const [country, setCountry] = useFeatch([])
+function FirstRuning(i) {
+  const [country, setCountry] = useFeatch([i])
   const [isnext, setIsnext] = useState(false)
 
   const handleClick = (e) => {
       e.preventDefault()
       setIsnext(!isnext)
   } 
+
+  
+
 
   return (
     <div>
@@ -44,7 +47,7 @@ function FirstRuning() {
                 </div>
               )
             })}
-         <Link to='./SecondRuning'> <button className="next">Next</button></Link>
+         <Link to='./SecondRuning'> <button onClick={handleClick} className="next">Next</button></Link>
          </>)}
       </div>
     </div>
