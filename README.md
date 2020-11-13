@@ -55,6 +55,16 @@ Introduce your projects by taking a screenshot or a gif. Try to tell visitors a 
 -   [React](https://reactjs.org/)
 
 ## Features
+ - Inedx file generate everything in the page 
+ -   App file with function contain every feature
+ -   There are 3 files and 2 components files
+      #### 3 files
+      -   FirstRuning when the quize first started
+      -  SecondRuning for second question whwn the user done for the firs question
+      -  userTeatch generate the state almost to all the function
+      #### 2 files component
+      -    FeacthingCapital file for feacthing the capital which did not work at all.
+      -    QuestionAnswer what I think to generate the answer and the qusetion
 
 <!-- List the features of your application or follow the template. Don't share the figma file here :) -->
 

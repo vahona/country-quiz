@@ -14,8 +14,6 @@ function FirstRuning(i) {
       setIsnext(!isnext)
   } 
 
-  
-
 
   return (
     <div>

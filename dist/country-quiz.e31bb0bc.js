@@ -33853,9 +33853,7 @@ if ("development" !== "production") {
     style: _propTypes.default.object
   });
 }
-},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"Components/FeactFullCountries.js":[function(require,module,exports) {
-
-},{}],"useFeatch.js":[function(require,module,exports) {
+},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"useFeatch.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33867,8 +33865,9 @@ var _react = require("react");
 
 const COUNTRY_URL = "https://restcountries.eu/rest/v2/all";
 
-function useFeatch(i) {
-  const [country, setCountry] = (0, _react.useState)([i]);
+function useFeatch() {
+  // Setting a state to all of the components
+  const [country, setCountry] = (0, _react.useState)([]); // Featching data from the api link
 
   const countries = async () => {
     try {
@@ -34093,8 +34092,6 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _FeactFullCountries = _interopRequireDefault(require("./Components/FeactFullCountries"));
-
 var _FirstRuning = _interopRequireDefault(require("./FirstRuning"));
 
 var _FeacthingCapital = _interopRequireDefault(require("./Components/FeacthingCapital"));
@@ -34123,7 +34120,7 @@ function App() {
 
 var _default = App;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./Components/FeactFullCountries":"Components/FeactFullCountries.js","./FirstRuning":"FirstRuning.js","./Components/FeacthingCapital":"Components/FeacthingCapital.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./Score":"Score.js","./SecondRuning":"SecondRuning.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./FirstRuning":"FirstRuning.js","./Components/FeacthingCapital":"Components/FeacthingCapital.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./Score":"Score.js","./SecondRuning":"SecondRuning.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));

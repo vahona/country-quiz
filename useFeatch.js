@@ -2,8 +2,17 @@ import { useEffect, useState } from 'react'
 
 const COUNTRY_URL = "https://restcountries.eu/rest/v2/all"
 
-function useFeatch(i) {
-  const [country, setCountry] = useState([i])
+
+
+
+function useFeatch() {
+
+  // Setting a state to all of the components
+
+  const [country, setCountry] = useState([])
+
+  // Featching data from the api link
+  
   const countries = async () => {
   
     try {
