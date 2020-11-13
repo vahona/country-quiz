@@ -1,9 +1,8 @@
 
-
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import useFeatch from './useFeatch'
-// import FeatchFullInformation from './Components/FeactFullCountries'
+
 
 
 function FirstRuning() {
@@ -26,7 +25,7 @@ function FirstRuning() {
             <div key={country.id}>
               <Link to="./FirstRuning">
                 <button className="button_choice" onClick={handleClick} key={country.id}>
-                  {capitals.capital}
+                  {capitals.name}
                </button></Link> 
             </div>
           )
@@ -39,7 +38,7 @@ function FirstRuning() {
                 <div key={country.id}>
                   <Link to="./FirstRuning">
                     <button className="button_choice" onClick={handleClick} key={country.id}>
-                     {capita.capital}
+                     {capita.name}
                     </button>
                     </Link>
                 </div>

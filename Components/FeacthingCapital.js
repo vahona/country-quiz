@@ -8,10 +8,8 @@ function FeacthingCapital({ capitalName }) {
   const [country, setCountry] = useFeatch({})
   const [capital, setCapital] = useState([])
 
-  // const { capitalName } = useParams()
   const BASE_URL = `https://restcountries.eu/rest/v2/capital/${capitalName}`;
 
-  // https://restcountries.eu/rest/v2/capital/tallinn
 
   const capitalsCountry = async () => {
     const response = await fetch(BASE_URL)
@@ -29,7 +27,6 @@ function FeacthingCapital({ capitalName }) {
 
   return (
     <div>
-
     </div>
   )
 }

@@ -9,13 +9,27 @@ function SecondRuning() {
   return (
     <>
       <h5>Which country does this flag belong to?</h5>
-      <img key={country.id} className="flags" src={country.flag} alt="flag" />
+      {country.map((flags) => { 
+        country.length = 1
+        return (
+              <img key={flags.id} className="flags" src={flags.flag} alt="flag" />
+          )
+         })} 
       {country.map((countri) => {
         country.length = (Math.floor(Math.random() * country.length)) 
         return (
           <>
             <div >
-              <button className="button_choice" key={countri.id}>{countri.name}</button>
+              <button className="button_choice" key={countri.id} > A {countri.name}</button>
+            </div>
+            <div >
+              <button className="button_choice" key={countri.id} > B {countri.name}</button>
+            </div>
+            <div >
+              <button className="button_choice" key={countri.id} > C {countri.name}</button>
+            </div>
+            <div >
+              <button className="button_choice" key={countri.id} >  D {countri.name}</button>
             </div>
           </>
         )

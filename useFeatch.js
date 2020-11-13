@@ -6,6 +6,7 @@ function useFeatch() {
 
   const [country, setCountry] = useState([])
   const countries = async () => {
+
     try {
       const res = await fetch(COUNTRY_URL)
       const result = await res.json()
