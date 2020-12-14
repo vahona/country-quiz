@@ -1,8 +1,6 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const COUNTRY_URL = "https://restcountries.eu/rest/v2/all"
-
-
 
 
 function useFeatch() {
@@ -10,31 +8,30 @@ function useFeatch() {
   // Setting a state to all of the components
 
   const [country, setCountry] = useState([])
+  const [question, setQuestion] = useState([])
+  const [wrongAnswear, setWrongAnswear] = useState([])
+  const [truQuestion, setTrueQuestion] = useState([])
+  const [score, setScore] = useState([])
 
   // Featching data from the api link
-  
-  const countries = async () => {
-  
-    try {
-      const res = await fetch(COUNTRY_URL)
-      const result = await res.json()
-      const data = [...result]
-      setCountry(data)
-      console.log("ww",data);
-
-    }
-
-    catch (e) {
-      console.log(e);
-    }
-  }
 
   useEffect(() => {
-    countries();
+    (async () => {
 
-  }, [])
+      const res = await fetch(COUNTRY_URL)
+      const result = await res.json()
+      setCountry(result)
 
-    return [country, setCountry, COUNTRY_URL, countries, useEffect]
+    })()
+
+  },[])
+  
+  function Question() {
+   
+  
+  }
+
+    return [country, setCountry, useEffect]
 }
 
 export default useFeatch

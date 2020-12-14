@@ -33861,30 +33861,33 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _react = require("react");
+var _react = _interopRequireWildcard(require("react"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 const COUNTRY_URL = "https://restcountries.eu/rest/v2/all";
 
 function useFeatch() {
   // Setting a state to all of the components
-  const [country, setCountry] = (0, _react.useState)([]); // Featching data from the api link
-
-  const countries = async () => {
-    try {
-      const res = await fetch(COUNTRY_URL);
-      const result = await res.json();
-      const data = [...result];
-      setCountry(data);
-      console.log("ww", data);
-    } catch (e) {
-      console.log(e);
-    }
-  };
+  const [country, setCountry] = (0, _react.useState)([]);
+  const [question, setQuestion] = (0, _react.useState)([]);
+  const [wrongAnswear, setWrongAnswear] = (0, _react.useState)([]);
+  const [truQuestion, setTrueQuestion] = (0, _react.useState)([]);
+  const [score, setScore] = (0, _react.useState)([]); // Featching data from the api link
 
   (0, _react.useEffect)(() => {
-    countries();
+    (async () => {
+      const res = await fetch(COUNTRY_URL);
+      const result = await res.json();
+      setCountry(result);
+    })();
   }, []);
-  return [country, setCountry, COUNTRY_URL, countries, _react.useEffect];
+
+  function Question() {}
+
+  return [country, setCountry, _react.useEffect];
 }
 
 var _default = useFeatch;
@@ -33912,40 +33915,75 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function FirstRuning(i) {
   const [country, setCountry] = (0, _useFeatch.default)([i]);
   const [isnext, setIsnext] = (0, _react.useState)(false);
+  console.log("pp", { ...[country]
+  });
 
   const handleClick = e => {
     e.preventDefault();
     setIsnext(!isnext);
   };
 
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h5", null, " ", country.capital, " is the capital of"), /*#__PURE__*/_react.default.createElement("div", null, country.map(capitals => {
+  country.length = Math.floor(Math.random() * country.length);
+  const bottonChoice = country.map(capitals => {
+    country.length = 1;
     country.length = Math.floor(Math.random() * country.length);
+    country.length < 2;
     return /*#__PURE__*/_react.default.createElement("div", {
       key: country.id
-    }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-      to: "./FirstRuning"
-    }, /*#__PURE__*/_react.default.createElement("button", {
-      className: "button_choice",
-      onClick: handleClick,
-      key: country.id
-    }, capitals.name)));
-  }), isnext && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, country.map(capita => {
-    country.length = Math.floor(Math.random() * country.length);
-    return /*#__PURE__*/_react.default.createElement("div", {
-      key: country.id
-    }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-      to: "./FirstRuning"
-    }, /*#__PURE__*/_react.default.createElement("button", {
-      className: "button_choice",
-      onClick: handleClick,
-      key: country.id
-    }, capita.name)));
-  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "./SecondRuning"
-  }, " ", /*#__PURE__*/_react.default.createElement("button", {
-    onClick: handleClick,
-    className: "next"
-  }, "Next")))));
+    }, capitals.name);
+  }); //  {
+  //    bottonChoice;
+  //  }
+  //  {
+  //    isnext && (
+  //      <>
+  //        {country.map((capita) => {
+  //          country.length = Math.floor(Math.random() * country.length);
+  //          return (
+  //            <div key={country.id}>
+  //              <Link to="./FirstRuning">
+  //                <button
+  //                  className="button_choice"
+  //                  onClick={handleClick}
+  //                  key={country.id}
+  //                >
+  //                  {capita.name}
+  //                </button>
+  //              </Link>
+  //            </div>
+  //          );
+  //        })}
+  //        <Link to="./SecondRuning">
+  //          {" "}
+  //          <button onClick={handleClick} className="next">
+  //            Next
+  //          </button>
+  //        </Link>
+  //      </>
+  //    );
+  //  }
+
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h5", null, " ", country.capital, " is the capital of"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "./FirstRuning"
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    className: "button_choice",
+    onClick: handleClick
+  }, /*#__PURE__*/_react.default.createElement("div", null, " A "), bottonChoice)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "./FirstRuning"
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    className: "button_choice",
+    onClick: handleClick
+  }, /*#__PURE__*/_react.default.createElement("div", null, " B "), " ", bottonChoice)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "./FirstRuning"
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    className: "button_choice",
+    onClick: handleClick
+  }, /*#__PURE__*/_react.default.createElement("div", null, " C "), " ", bottonChoice)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "./FirstRuning"
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    className: "button_choice",
+    onClick: handleClick
+  }, /*#__PURE__*/_react.default.createElement("div", null, " D "), " ", bottonChoice))));
 }
 
 var _default = FirstRuning;
@@ -33975,11 +34013,14 @@ function FeacthingCapital({
 }) {
   const [country, setCountry] = (0, _useFeatch.default)({});
   const [capital, setCapital] = (0, _react.useState)([]);
-  const BASE_URL = `https://restcountries.eu/rest/v2/capital/${capitalName}`;
+  const {
+    region
+  } = (0, _reactRouterDom.useParams)();
+  const BASE_URL = `https://restcountries.eu/rest/v2/capital/${region}`;
 
   const capitalsCountry = async () => {
-    const response = await fetch(BASE_URL);
-    console.log(response);
+    const response = await fetch(BASE_URL + region);
+    console.log("lll", response);
     const capit = await response.json();
     setCapital(capit);
     console.log("j", capit);
@@ -34162,7 +34203,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50092" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64334" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
