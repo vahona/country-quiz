@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import useFeatch from './useFeatch'
+import { ButtonChoice, SignAlpha } from "./styled";
 
 
 
@@ -72,25 +73,25 @@ function FirstRuning(i) {
       <h5> {country.capital} is the capital of</h5>
       <div>
         <Link to="./FirstRuning">
-          <button className="button_choice" onClick={handleClick}>
-            <div> A </div>
-            {bottonChoice}
-          </button>
+          <ButtonChoice className="button_choice" onClick={handleClick}>
+            <SignAlpha> A </SignAlpha>
+            {bottonChoice} 
+          </ButtonChoice>
         </Link>
         <Link to="./FirstRuning">
-          <button className="button_choice" onClick={handleClick}>
-            <div> B </div> {bottonChoice}
-          </button>
+          <ButtonChoice className="button_choice" onClick={handleClick}>
+            <SignAlpha> B </SignAlpha> {bottonChoice}
+          </ButtonChoice>
         </Link>
         <Link to="./FirstRuning">
-          <button className="button_choice" onClick={handleClick}>
-            <div> C </div> {bottonChoice}
-          </button>
+          <ButtonChoice className="button_choice" onClick={handleClick}>
+            <SignAlpha> C </SignAlpha> {bottonChoice}
+          </ButtonChoice>
         </Link>
         <Link to="./FirstRuning">
-          <button className="button_choice" onClick={handleClick}>
-            <div> D </div> {bottonChoice}
-          </button>
+          <ButtonChoice className="button_choice" onClick={handleClick}>
+            <SignAlpha> D </SignAlpha> {bottonChoice}
+          </ButtonChoice>
         </Link>
       </div>
     </div>
