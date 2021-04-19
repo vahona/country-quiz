@@ -1,6 +1,6 @@
 
 
-.button_choice:hover {
+/* .button_choice:hover {
    background-color: rgb(255, 204, 0);
 }
 
@@ -17,11 +17,11 @@ html {
     margin-inline-start: auto;
     margin-inline-end: auto;
 
-}
+} */
 
 
-main {
-    /* width: 50% ; */
+/* main {
+    
     height: 600px;
     background-image: url('./images/adventure.svg');
     background-repeat: no-repeat;
@@ -32,9 +32,9 @@ main {
     position: relative;
     width: 80%;
 
-}
+} */
 
-section {
+/* section {
     background-color: white;
     margin-inline-start: 1rem;
     margin-inline-end: 1rem;
@@ -51,9 +51,9 @@ section {
     position: absolute;
     top: 10rem;
     z-index: 1;
-}
+} */
 
-h1 {
+/* h1 {
   color: aliceblue;
   top: 20%;
   position: absolute;
@@ -81,8 +81,8 @@ span {
     text-transform: uppercase;
     padding: 1.5rem;
     border-radius: 10px;
-}
-
+} */
+/* 
 @media (min-width: 1000px) {
      .button_choice {
         background-color: white;
@@ -101,4 +101,4 @@ span {
   main {
       width: 30%;
   }
-}
+} */

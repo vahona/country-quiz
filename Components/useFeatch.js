@@ -3,11 +3,13 @@ import React, { useEffect, useState } from 'react'
 const COUNTRY_URL = "https://restcountries.eu/rest/v2/all"
 
 
-function useFeatch() {
+function UseFeatch() {
 
   // Setting a state to all of the components
 
   const [country, setCountry] = useState([])
+  const [randomeCountries, setRandomCountries] = useState({});
+  const [randomeChoices, setRandomeChoices] = useState([])
   const [question, setQuestion] = useState([])
   const [wrongAnswear, setWrongAnswear] = useState([])
   const [truQuestion, setTrueQuestion] = useState([])
@@ -15,23 +17,30 @@ function useFeatch() {
 
   // Featching data from the api link
 
-  useEffect(() => {
-    (async () => {
 
-      const res = await fetch(COUNTRY_URL)
-      const result = await res.json()
-      setCountry(result)
 
-    })()
-
-  },[])
-  
-  function Question() {
-   
-  
+  const counttryList = async () => {
+    const response = await fetch(COUNTRY_URL);
+    const data = await response.json();
+    setCountry(data);
+    setRandomCountries(data);
+    console.log(data);
   }
+  
 
-    return [country, setCountry, useEffect]
+  useEffect(() => {
+    counttryList()
+  }, [])
+
+ 
+
+  return (
+    <div>
+      me
+    </div>
+  )
+
+  
 }
 
-export default useFeatch
+export default UseFeatch
