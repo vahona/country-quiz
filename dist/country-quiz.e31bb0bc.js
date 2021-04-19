@@ -33890,7 +33890,18 @@ function UseFeatch() {
   (0, _react.useEffect)(() => {
     counttryList();
   }, []);
-  return /*#__PURE__*/_react.default.createElement("div", null, "me");
+
+  function countryRandomly() {
+    const firstRandom = countries[Math.floor(Math.random() * countries.length + 1)];
+    const secondRandom = countries[Math.floor(Math.random() * countries.length)];
+    const thirdRandom = countries[Math.floor(Math.random() * countries.length + 1)];
+    const fourthRandom = countries[Math.floor(Math.random() * countries.length + 1)];
+    const Options = [firstRandom, secondRandom, thirdRandom, fourthRandom];
+    setRandomeChoices(Options);
+    randomeCountries(secondRandom);
+  }
+
+  return /*#__PURE__*/_react.default.createElement("div", null);
 }
 
 var _default = UseFeatch;
